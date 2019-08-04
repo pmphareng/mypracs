@@ -15,14 +15,14 @@ import time
 
 # Logic that you write
 def main():
-    print("write your logic here")
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(24, GPIO.OUT)
+    #print("write your logic here")
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(18, GPIO.OUT)
     print("LED on")
-    GPIO.output(24, GPIO.HIGH)
+    GPIO.output(18, GPIO.HIGH)
     time.sleep(1)
     print("LED off")
-    GPIO.output(24, GPIO.LOW)
+    GPIO.output(18, GPIO.LOW)
     time.sleep(1)
 
 # Only run the functions if 
