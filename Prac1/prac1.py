@@ -56,6 +56,7 @@ GPIO.add_event_detect(12, GPIO.FALLING, callback=count_down, bouncetime=200)
 
 # Logic that you write
 def main():
+    # Keep the power LED on for main function to keep running
     GPIO.output(powerLed, True)
 
 # Only run the functions if 
