@@ -30,7 +30,7 @@ c=0
 
 def count_up(channel): #Count up callback
     print("Counting up")
-    global c
+    global c # Access global c value
 
     c = (c+1)%8 
     
@@ -41,7 +41,7 @@ def count_up(channel): #Count up callback
 
 def count_down(channel): # Count down callback 
     print("Counting down")
-    global c
+    global c  # Access global c value
     
     c = (c-1)%8
     
@@ -50,15 +50,13 @@ def count_down(channel): # Count down callback
     GPIO.output(led2, (c>>1) & 1)
     GPIO.output(led3, (c>>2) & 1)
 
+# Event handlers
 GPIO.add_event_detect(7, GPIO.FALLING,  callback=count_up, bouncetime=200)
 GPIO.add_event_detect(12, GPIO.FALLING, callback=count_down, bouncetime=200)
 
 # Logic that you write
 def main():
     GPIO.output(powerLed, True)
-    #GPIO.output(led1, False)
-    #GPIO.output(led2,False)
-    #GPIO.output(led3, False)
 
 # Only run the functions if 
 if __name__ == "__main__":
